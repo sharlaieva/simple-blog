@@ -1,0 +1,19 @@
+{block content}
+
+	<h1 n:block="title">Hello, {$user_name}</h1>
+	<a class = "create" n:href="Homepage:create" n:if="$user->isLoggedIn()">Create post</a>
+
+	<div n:foreach="$posts as $post" class="post">
+	
+
+	<h2>{$post->title}</h2>
+	<div>{$post->content}</div>
+	<div class="date">{$post->time_created|date:'F j, Y'}</div>
+
+	{* Edit and delete only if user created this post *}
+	
+	<a n:href="edit $post->id" n:if="$user->id == $post->user_id"> Edit </a> 
+	<a n:href="delete $post->id" n:if="$user->id == $post->user_id"> Delete </a>
+</div>
+
+{/block}

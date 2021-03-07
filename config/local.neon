@@ -2,6 +2,6 @@ parameters:
 
 
 database:
-	dsn: 'mysql:host=sql11.freesqldatabase.com;dbname=sql11395598;port=3306'
-	user: sql11395598
-	password: Ivl1fuTevZ
+	dsn: #'mysql:host={{hostname}};dbname={{dbname}};port=3306'
+	user: #{{username}}
+	password: #{{password}}
